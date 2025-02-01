@@ -46,10 +46,10 @@ Follow these steps to set up the Daily Recipe Bot:
 
 3.  **Configure GitHub Secrets:**
     You need to securely store your API keys and email credentials as GitHub Secrets in your repository:
-        *   **`GEMINI_API_KEY`**:  Your Gemini API key from Google AI Studio.
-        *   **`SENDER_EMAIL`**:  Your email address that will send the recipes.
-        *   **`SENDER_PASSWORD`**:  Your email password or App Password.
-        *   **`RECEIVER_EMAIL`**:  The email address where you want to receive the daily recipes.
+           **`GEMINI_API_KEY`**:  Your Gemini API key from Google AI Studio.
+           **`SENDER_EMAIL`**:  Your email address that will send the recipes.
+           **`SENDER_PASSWORD`**:  Your email password or App Password.
+           **`RECEIVER_EMAIL`**:  The email address where you want to receive the daily recipes.
 
 
 ## Usage
