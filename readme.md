@@ -50,6 +50,8 @@ Follow these steps to set up the Daily Recipe Bot:
     *   **`SENDER_EMAIL`**:  Your email address that will send the recipes.
     *   **`SENDER_PASSWORD`**:  Your email password or App Password.
     *   **`RECEIVER_EMAIL`**:  The email address where you want to receive the daily recipes.
+    *   **`SMTP_SERVER`** (Optional): The SMTP server address for your email provider. Defaults to `smtp.gmail.com` if not set. You can set this as a secret if you want to use a different server than Gmail or keep it configurable.
+    *   **`SMTP_PORT`** (Optional): The SMTP port number. Defaults to `465` (for SSL) if not set. You can set this as a secret if your SMTP server uses a different port.
 
 
 ## Usage
@@ -62,7 +64,7 @@ Once set up, the Daily Recipe Bot will run automatically every day at 9:00 AM UT
 
 ## Customization
 
-*   **Country List:** Modify the `countries` list in the `get_random_country()` function in `recipe_bot.py` to include your preferred countries or regions.
+*   **Country_List.txt:** Modify the `countries` list in the text file to include your preferred countries or regions.
 *   **Recipe Prompt:**  Adjust the `prompt` in the `generate_recipe()` function to refine the type of recipes generated (e.g., specify vegetarian, vegan, quick, specific cuisine, etc.).
 *   **Email Content:** Customize the email subject and body text in the `send_email()` function in `recipe_bot.py`.
 *   **Scheduling:** Change the `cron` schedule in `.github/workflows/recipe_bot.yml` to adjust the daily run time.
