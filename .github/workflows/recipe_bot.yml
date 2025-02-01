@@ -1,0 +1,30 @@
+name: Daily Recipe Bot (Email)
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Runs every day at 9:00 AM UTC (adjust as needed)
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  run_recipe_bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # Or your preferred Python version
+
+      - name: Install dependencies
+        run: |
+          pip install google-generativeai
+
+      - name: Run recipe bot script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+        run: python recipe_bot.py
