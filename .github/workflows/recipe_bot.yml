@@ -2,7 +2,7 @@ name: Daily Recipe Bot (Email)
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Runs every day at 9:00 AM UTC (adjust as needed)
+    - cron: '0 14 * * *'  # Runs every day at 14:00 AM UTC (adjust as needed)
   workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
